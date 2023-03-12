@@ -16,6 +16,7 @@ FONT_SIZE = 50
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (128, 128, 128)
+BLUE = (0, 0, 225)
 
 
 class SudokuGUI:
@@ -49,7 +50,9 @@ class SudokuGUI:
     def draw_selected_cell(self, surface):
         if self.selected:
             i, j = self.selected
-            pygame.draw.rect(surface, GRAY, pygame.Rect(j * CELL_SIZE, i * CELL_SIZE, CELL_SIZE, CELL_SIZE))
+            x_pos = j * CELL_SIZE
+            y_pos = i * CELL_SIZE
+            pygame.draw.rect(surface, BLUE, pygame.Rect(x_pos, y_pos, CELL_SIZE, CELL_SIZE), GRID_THICKNESS)
 
     def update(self, surface):
         self.draw_board(surface)
